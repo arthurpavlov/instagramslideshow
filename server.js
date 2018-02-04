@@ -4,7 +4,8 @@ var request = require('request');
 var app     = express();
 var bodyParser = require('body-parser');
 var Nightmare = require('nightmare');
-const cheerio = require('cheerio');       
+const cheerio = require('cheerio');
+var Xvfb = require('xvfb');       
 
 
 app.use(express.static(__dirname));
@@ -34,7 +35,10 @@ app.post('/', function(req, res){
             res.json({success: ['invalid_account']});
         }   
     });    
-
+        var xvfb = new Xvfb({
+        silent: true
+        });
+        xvfb.startSync();
          var urls = [];
        
             var nightmare = Nightmare(
@@ -67,7 +71,7 @@ app.post('/', function(req, res){
                 })
                 .end()
                 .then((result) => {
-                    // console.log(result);
+                    console.log(result);
                     rex = /https:\/\/instagram\.[\w_\-\/\.]*\.jpg 640w|{"src":"https:\/\/instagram\.[\w_\-\/\.]*\.jpg","config_width":640,"config_height":640}/gi
                     while (m = rex.exec(result)) {
                         // console.log(m[0]);
@@ -77,6 +81,7 @@ app.post('/', function(req, res){
                             urls.push(m2[0]);  
                         }
                     }
+                    xvfb.stopSync();
                     res.json({success: urls});
                 })
 
