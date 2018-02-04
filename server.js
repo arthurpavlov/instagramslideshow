@@ -80,8 +80,8 @@ app.post('/', function(req, res){
                             urls.push(m2[0]);  
                         }
                     }
-                    xvfb.stopSync();
                     res.json({success: urls});
+                    xvfb.stopSync();
                 })
 
 });
