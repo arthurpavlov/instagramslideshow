@@ -71,7 +71,7 @@ app.post('/', function(req, res){
                 })
                 .end()
                 .then((result) => {
-                    console.log(result);
+                    // console.log(result);
                     rex = /https:\/\/[\w_\-\/\.]*\.jpg 640w|{"src":"https:\/\/[\w_\-\/\.]*\.jpg","config_width":640,"config_height":640}/gi
                     while (m = rex.exec(result)) {
                         // console.log(m[0]);
@@ -81,7 +81,8 @@ app.post('/', function(req, res){
                             urls.push(m2[0]);  
                         }
                     }
-                    
+                    console.log(urls);
+
                     res.json({success: urls});
                     // xvfb.stopSync();
                 })
