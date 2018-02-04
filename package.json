@@ -1,0 +1,21 @@
+{
+  "name": "instagramslideshow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mainPage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "xvfb-run -a node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurpavlov/instagramslideshow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthurpavlov/instagramslideshow/issues"
+  },
+  "homepage": "https://github.com/arthurpavlov/instagramslideshow#readme"
+}
