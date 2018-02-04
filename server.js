@@ -72,7 +72,7 @@ app.post('/', function(req, res){
                 .end()
                 .then((result) => {
                     console.log(result);
-                    rex = /https:\/\/instagram\.[\w_\-\/\.]*\.jpg 640w|{"src":"https:\/\/instagram\.[\w_\-\/\.]*\.jpg","config_width":640,"config_height":640}/gi
+                    rex = /https:\/\/[\w_\-\/\.]*\.jpg 640w|{"src":"https:\/\/[\w_\-\/\.]*\.jpg","config_width":640,"config_height":640}/gi
                     while (m = rex.exec(result)) {
                         // console.log(m[0]);
                         rex2 = /https:\/\/instagram\.[\w_\-\/\.]*\.jpg/gi
