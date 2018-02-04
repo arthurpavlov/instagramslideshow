@@ -1,0 +1,97 @@
+body {
+    background-image: url("bg.jpg");
+/*    background-repeat: no-repeat;
+*/     background-size: 100% 900%;
+     
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+.link{
+	font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+    outline: 0;
+    padding: 9px;
+    width: 100%;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: #FFB6C1;
+    color: white;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 10px;
+}
+
+input[type="button"]{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	position: relative;
+    display: block;
+    padding: 9px;
+    color: black;
+    margin: 0 auto;
+    background: #FFB6C1;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    box-sizing: border-box; 
+    background-color: #E6E6FA;
+    color:white;
+    margin-bottom: 5px;
+}
+
+#images-container{
+	margin-top: 30px;
+}
+
+.slide{
+	display:none;
+	width: 800px;
+    height: 1100px;
+    border: 2px black solid;
+    margin: auto;
+
+ }
+
+
+.slide img{
+	max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+ }
+
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .6} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .6} 
+  to {opacity: 1}
+}
+
+@media screen and (max-width: 480px) {
+	.slide{
+		width: 70%;
+    		height: 450px;
+	}
+
+}
