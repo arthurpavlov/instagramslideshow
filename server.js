@@ -81,7 +81,7 @@ app.post('/', function(req, res){
                             urls.push(m2[0]);  
                         }
                     }
-                    console.log(urls);
+                    // console.log(urls);
 
                     res.json({success: urls});
                     // xvfb.stopSync();

@@ -9,6 +9,16 @@ body {
   color: white;
 }
 
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: lime;
+}
+
 .link{
 	font-family: Georgia, "Times New Roman", Times, serif;
     background: rgba(255,255,255,.1);

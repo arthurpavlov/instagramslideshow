@@ -40,9 +40,12 @@ function getPageImages(pageurl){
  		data: message,
  		success: function(response){
   			if(response.success[0] == 'invalid_account'){
-  				alert('invalid account');
+          resetMove();
+          document.getElementById("myBar").style.backgroundColor = "red";
+          alert('invalid account');
   			}
   			else{
+          move();
   				var i = 0;
   				while(response.success[i] != undefined){
   					insertImage(response.success[i]);
@@ -73,6 +76,26 @@ function startSlideshow() {
     }    
     slides[slideIndex-1].style.display = "block";  
     timer = setTimeout(startSlideshow, 5000); // Change image every 5 seconds
+}
+
+function move() {
+    var elem = document.getElementById("myBar");
+    elem.style.backgroundColor = "lime"; 
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    }
+}
+
+function resetMove(){
+    var elem = document.getElementById("myBar"); 
+    elem.style.width = 1 + '%';
 }
 
 function getImages(){
