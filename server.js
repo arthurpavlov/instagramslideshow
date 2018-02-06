@@ -30,6 +30,7 @@ app.post('/', function(req, res){
     var url = userInput.link;
     // request(url, function(error, response, html){
     request(url, function(error, response, html){
+        // console.log(html);
         const $ = cheerio.load(html);
         if($('.error-container').html() != null){
             res.json({success: ['invalid_account']});
@@ -45,7 +46,6 @@ app.post('/', function(req, res){
             { show: true });
             nightmare.goto(url)
                 .wait('body')
-                .click('._1cr2e ')
                 .scrollTo(6000, 0).wait(200)
                 .scrollTo(6000, 0).wait(200)
                 .scrollTo(6000, 0).wait(200)
